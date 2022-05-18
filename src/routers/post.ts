@@ -1,18 +1,15 @@
 import * as express from 'express';
-import {Note} from '../models/note';
+import {Athlete} from '../models/athlete';
 
 
 export const postRouter = express.Router();
 
-// Recibe peticiones para crear notas
-postRouter.post('/note', (req, res) => {
-  const note = new Note({
-    name: req.body.name,
-    monthlyListeners: req.body.monthlyListeners,
-  });
-  // Se almacenan los datos de la nota
-  note.save().then((note) => {
-    res.status(201).send(note);
+/** Receives petitions to create Athletes */
+postRouter.post('/athlete', (req, res) => {
+  const athlete = new Athlete(req.body);
+
+  athlete.save().then((athlete) => {
+    res.status(201).send(athlete);
   }).catch((error) => {
     res.status(400).send(error);
   });

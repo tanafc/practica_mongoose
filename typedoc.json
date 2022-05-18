@@ -1,6 +1,13 @@
 {
   "entryPoints": [
-    "./src/modificacion.ts"
+    "./src/models/athlete.ts",
+    "./src/db/mongoose.ts",
+    "./src/routers/default.ts",
+    "./src/routers/delete.ts",
+    "./src/routers/get.ts",
+    "./src/routers/patch.ts",
+    "./src/routers/post.ts",
+    "./src/index.ts"
   ],
   "out": "./docs"
 }
